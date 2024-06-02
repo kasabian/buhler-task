@@ -1,0 +1,67 @@
+@mixin section-conf() {
+  padding: 1.5rem;
+  position: relative;
+  width: 150px;
+  text-align: center;
+  font-weight: 500;
+}
+
+@mixin section-icon-conf($icon) {
+  @include md-icon-conf();
+  content: $icon;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+}
+
+.running-section {
+  @include section-conf();
+  background-color: var(--gray-100);
+
+  &:after {
+    @include section-icon-conf("rotate_90_degrees_cw");
+    color: var(--green-600);
+  }
+}
+
+.warning-section {
+  @include section-conf();
+  background-color: var(--red-500);
+  color: var(--primary-color-text);
+
+  &:after {
+    @include section-icon-conf("error_outline");
+    color: var(--primary-color-text);
+  }
+}
+
+.alarm-section {
+  @include section-conf();
+  background-color: var(--orange-500);
+  color: var(--primary-color-text);
+
+  &:after {
+    @include section-icon-conf("report_problem");
+    color: var(--primary-color-text);
+  }
+}
+
+.connect-section {
+  width: 50px;
+  display: flex;
+  align-items: center;
+
+  &:after {
+    content: "";
+    width: 100%;
+    border-top: 3px solid var(--green-700);
+  }
+}
+
+.section-container {
+  display: flex;
+  height: calc(100vh - 142px);
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}

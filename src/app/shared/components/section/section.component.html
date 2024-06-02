@@ -1,0 +1,6 @@
+<span
+  *ngIf="sectionType === 'full'"
+  class="text-5xl"
+  [ngClass]="typeInfoMap[machinesInfo.type].fullIconClass"
+></span>
+<div>{{ typeInfoMap[machinesInfo.type].name }}</div>

@@ -1,0 +1,22 @@
+<div class="section-container">
+  <div>
+    <div class="flex justify-content-center flex-wrap">
+      <div class="flex align-items-center">
+        @for (
+          machinesInfoItem of machinesInfoItems;
+          track machinesInfoItem;
+          let idx = $index
+        ) {
+          <app-section
+            [machinesInfo]="machinesInfoItem"
+            [sectionType]="'full'"
+          ></app-section>
+
+          @if (idx !== machinesInfoItems.length - 1) {
+            <div class="connect-section"></div>
+          }
+        }
+      </div>
+    </div>
+  </div>
+</div>
